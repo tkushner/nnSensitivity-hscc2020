@@ -64,55 +64,39 @@ cons_low_big = pd.concat(cons_sens_low,axis=1)
 cons_high_big = pd.concat(cons_sens_high,axis=1)
 cons_frame = pd.concat([cons_low_big,cons_high_big],axis=1)
 
-# pull those that have positive sensitivity versus negative
-reg_frame_pos = reg_frame[reg_frame>0]
-reg_frame_neg = reg_frame[reg_frame<=0]
 
-split_frame_pos = split_frame[split_frame>0]
-split_frame_neg = split_frame[split_frame<=0]
+def PlotSensitivity(df, netname, printVal):
+    #split positive and negative sensitivities
+    df_pos = df[df>0]
+    df_neg = df[df<=0]
 
-cons_frame_pos = cons_frame[cons_frame>0]
-cons_frame_neg = cons_frame[cons_frame<=0]
+    # print the values, if desired (printVal = True)
+    if printVal:
+        print('---'+netname+' total mean neg---')
+        print(df_neg.mean(axis=1,skipna=True))
+        print('--std--')
+        print(df_neg.std(axis=1,skipna=True))
 
-print('---Reg total mean pos---')
-print(reg_frame_pos.mean(axis=1,skipna=True))
-print('--std--')
-print(reg_frame_pos.std(axis=1,skipna=True))
+        print('---'+netname+' total mean pos---')
+        print(df_pos.mean(axis=1,skipna=True))
+        print('--std--')
+        print(df_pos.std(axis=1,skipna=True))
 
-print('---Reg total mean neg---')
-print(reg_frame_neg.mean(axis=1,skipna=True))
-print('--std--')
-print(reg_frame_neg.std(axis=1,skipna=True))
+    #plot means for positive and negative
+    #make dataframe of means
+    df_mean = pd.concat([df_neg.mean(axis=1,skipna=True),df_pos.mean(axis=1,skipna=True)],axis=1)
+    df_mean.columns=['Negative','Positive']
+    df_mean.plot(kind='bar',stacked=True)
+    plt.ylabel('mean change (mg/dL)/unit')
+    plt.xlabel('look back time')
+    plt.title(netname+' network sensitivity')
+    t_names = ['-30','-25','-20','-15','-10','-5','0']
+    locs, labels = plt.xticks()
+    plt.xticks(locs,t_names,rotation='horizontal')
+    plt.gca().legend_.remove()
+    plt.savefig(netname+'_sensitivity.pdf')
 
-print('---Split total mean pos---')
-print(split_frame_pos.mean(axis=1,skipna=True))
-print('--std--')
-print(split_frame_pos.std(axis=1,skipna=True))
-
-print('---Split total mean neg---')
-print(split_frame_neg.mean(axis=1,skipna=True))
-print('--std--')
-print(split_frame_neg.std(axis=1,skipna=True))
-
-print('---Cons total mean pos---')
-print(cons_frame_pos.mean(axis=1,skipna=True))
-print('--std--')
-print(cons_frame_pos.std(axis=1,skipna=True))
-
-print('---Cons total mean neg---')
-print(cons_frame_neg.mean(axis=1,skipna=True))
-print('--std--')
-print(cons_frame_neg.std(axis=1,skipna=True))
-
-
-# now make plots
-plt.close('all')
-
-#cons plot
-cons_frame_neg.mean(axis=1,skipna=True).plot(kind='bar')
-plt.ylabel('mean change (mg/dL)/unit')
-plt.xlabel('look back time')
-t_names = ['-30','-25','-20','-15','-10','-5','0']
-locs, labels = plt.xticks()
-plt.xticks(locs,t_names,rotation='horizontal')
-plt.show()
+#create pdf plots for the three networks
+PlotSensitivity(reg_frame,'M1-Regular',False)
+PlotSensitivity(split_frame,'M2-Split',False)
+PlotSensitivity(cons_frame,'M3-Constrained',False)
