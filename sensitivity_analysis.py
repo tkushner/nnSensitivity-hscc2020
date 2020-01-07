@@ -126,6 +126,6 @@ PlotSensitivity(split_frame,'M2-Split',False)
 PlotSensitivity(cons_frame,'M3-Constrained',False)
 
 #create a pdf plot for the random selected ranges by location plots
-PlotRanges(reg_data,'M1-Regular',8)
-PlotRanges(split_data,'M2-Split',8)
-PlotRanges(cons_data,'M3-Constrained',8)
+PlotRanges(reg_data,'M1-Regular',4)
+PlotRanges(split_data,'M2-Split',4)
+PlotRanges(cons_data,'M3-Constrained',4)
