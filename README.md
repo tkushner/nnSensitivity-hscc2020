@@ -9,7 +9,7 @@ Supply the network weights, biases, structure based on Sherlock format.
 Supply initialization vector for BG values.
 
 Default range for basal doses: 0-0.05 U/5min
-Default noise on BG values: +/- 4mg/dL
+Default noise on BG values: +/- 5%
 
 
 Verification of neural network dynamics using output range analysis. 
