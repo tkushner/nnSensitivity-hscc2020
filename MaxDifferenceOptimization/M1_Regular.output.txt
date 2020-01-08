@@ -1,0 +1,287 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 1 @ time t - 30 
+Minimizing output:
+Minimum output =  -6.303955500909183
+Gluc.(t - 30): 111.084105 , 111.084105  (Same)
+Gluc.(t - 25): 95.000000 , 95.000000  (Same)
+Gluc.(t - 20): 70.000000 , 70.000000  (Same)
+Gluc.(t - 15): 95.000000 , 95.000000  (Same)
+Gluc.(t - 10): 70.000000 , 70.000000  (Same)
+Gluc.(t - 5): 84.070357 , 84.070357  (Same)
+Gluc.(t - 0): 70.000000 , 70.000000  (Same)
+Ins(t - 30): 1.000000 , 1.100000  <~~~ (Different)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.000000 , 0.000000  (Same)
+Predicted Gluc. Values: 120.154779, 113.850823
+Confirming the results by evaluating the network:
+Network Eval. results: 120.154779, 113.850823
+------------------------------------------------------
+Maximizing output:
+Maximum output =  18.298097997876113
+Gluc.(t - 30): 103.341377 , 103.341377 (Same)
+Gluc.(t - 25): 78.341377 , 78.341377 (Same)
+Gluc.(t - 20): 88.513670 , 88.513670 (Same)
+Gluc.(t - 15): 113.513670 , 113.513670 (Same)
+Gluc.(t - 10): 138.513670 , 138.513670 (Same)
+Gluc.(t - 5): 163.513670 , 163.513670 (Same)
+Gluc.(t - 0): 164.902518 , 164.902518 (Same)
+Ins(t - 30): 0.000000 , 0.100000  <~~~ (Different)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 216.009940, 234.308038
+Confirming the results by evaluating the network:
+Network Eval. results: 216.009940, 234.308038
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 2 @ time t - 25 
+Minimizing output:
+Minimum output =  -17.420922625455972
+Gluc.(t - 30): 99.639486 , 99.639486  (Same)
+Gluc.(t - 25): 74.639486 , 74.639486  (Same)
+Gluc.(t - 20): 83.262875 , 83.262875  (Same)
+Gluc.(t - 15): 108.262875 , 108.262875  (Same)
+Gluc.(t - 10): 133.262875 , 133.262875  (Same)
+Gluc.(t - 5): 158.262875 , 158.262875  (Same)
+Gluc.(t - 0): 160.641797 , 160.641797  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.000000 , 0.100000  <~~~ (Different)
+Ins(t - 20): 0.000000 , 0.000000  (Same)
+Ins(t - 15): 0.000000 , 0.000000  (Same)
+Ins(t - 10): 0.000000 , 0.000000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 236.155594, 218.734671
+Confirming the results by evaluating the network:
+Network Eval. results: 236.155594, 218.734671
+------------------------------------------------------
+Maximizing output:
+Maximum output =  5.544388403215066
+Gluc.(t - 30): 90.641670 , 90.641670 (Same)
+Gluc.(t - 25): 70.000000 , 70.000000 (Same)
+Gluc.(t - 20): 70.000000 , 70.000000 (Same)
+Gluc.(t - 15): 95.000000 , 95.000000 (Same)
+Gluc.(t - 10): 112.195277 , 112.195277 (Same)
+Gluc.(t - 5): 137.195277 , 137.195277 (Same)
+Gluc.(t - 0): 112.552232 , 112.552232 (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 1.000000 , 1.100000  <~~~ (Different)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 122.804295, 128.348683
+Confirming the results by evaluating the network:
+Network Eval. results: 122.804295, 128.348683
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 3 @ time t - 20 
+Minimizing output:
+Minimum output =  -17.49481957478926
+Gluc.(t - 30): 92.282958 , 92.282958  (Same)
+Gluc.(t - 25): 70.000000 , 70.000000  (Same)
+Gluc.(t - 20): 70.000000 , 70.000000  (Same)
+Gluc.(t - 15): 95.000000 , 95.000000  (Same)
+Gluc.(t - 10): 110.532188 , 110.532188  (Same)
+Gluc.(t - 5): 135.532188 , 135.532188  (Same)
+Gluc.(t - 0): 110.532188 , 110.532188  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.737504 , 0.837504  <~~~ (Different)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 127.452853, 109.958033
+Confirming the results by evaluating the network:
+Network Eval. results: 127.452853, 109.958033
+------------------------------------------------------
+Maximizing output:
+Maximum output =  3.766477897132262
+Gluc.(t - 30): 96.575841 , 96.575841 (Same)
+Gluc.(t - 25): 71.575841 , 71.575841 (Same)
+Gluc.(t - 20): 87.352520 , 87.352520 (Same)
+Gluc.(t - 15): 112.352520 , 112.352520 (Same)
+Gluc.(t - 10): 87.352520 , 87.352520 (Same)
+Gluc.(t - 5): 70.000000 , 70.000000 (Same)
+Gluc.(t - 0): 80.270740 , 80.270740 (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.000000 , 0.100000  <~~~ (Different)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 123.666923, 127.433401
+Confirming the results by evaluating the network:
+Network Eval. results: 123.666923, 127.433401
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 4 @ time t - 15 
+Minimizing output:
+Minimum output =  -18.41136282892802
+Gluc.(t - 30): 115.665464 , 115.665464  (Same)
+Gluc.(t - 25): 90.665464 , 90.665464  (Same)
+Gluc.(t - 20): 105.931568 , 105.931568  (Same)
+Gluc.(t - 15): 130.931568 , 130.931568  (Same)
+Gluc.(t - 10): 155.931568 , 155.931568  (Same)
+Gluc.(t - 5): 180.931568 , 180.931568  (Same)
+Gluc.(t - 0): 176.347983 , 176.347983  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 1.000000 , 1.100000  <~~~ (Different)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 228.558768, 210.147405
+Confirming the results by evaluating the network:
+Network Eval. results: 228.558768, 210.147405
+------------------------------------------------------
+Maximizing output:
+Maximum output =  4.377063974390055
+Gluc.(t - 30): 105.792312 , 105.792312 (Same)
+Gluc.(t - 25): 80.792312 , 80.792312 (Same)
+Gluc.(t - 20): 95.000000 , 95.000000 (Same)
+Gluc.(t - 15): 120.000000 , 120.000000 (Same)
+Gluc.(t - 10): 95.000000 , 95.000000 (Same)
+Gluc.(t - 5): 70.000000 , 70.000000 (Same)
+Gluc.(t - 0): 83.414000 , 83.414000 (Same)
+Ins(t - 30): 0.100000 , 0.100000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.382290 , 0.482290  <~~~ (Different)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 122.432883, 126.809947
+Confirming the results by evaluating the network:
+Network Eval. results: 122.432883, 126.809947
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 5 @ time t - 10 
+Minimizing output:
+Minimum output =  -13.4795352779376
+Gluc.(t - 30): 96.497260 , 96.497260  (Same)
+Gluc.(t - 25): 71.497260 , 71.497260  (Same)
+Gluc.(t - 20): 77.457396 , 77.457396  (Same)
+Gluc.(t - 15): 102.457396 , 102.457396  (Same)
+Gluc.(t - 10): 127.457396 , 127.457396  (Same)
+Gluc.(t - 5): 152.457396 , 152.457396  (Same)
+Gluc.(t - 0): 153.722852 , 153.722852  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.000000 , 0.000000  (Same)
+Ins(t - 20): 0.000000 , 0.000000  (Same)
+Ins(t - 15): 0.000000 , 0.000000  (Same)
+Ins(t - 10): 0.000000 , 0.100000  <~~~ (Different)
+Ins(t - 5): 0.000000 , 0.000000  (Same)
+Ins(t - 0): 0.000000 , 0.000000  (Same)
+Predicted Gluc. Values: 224.744998, 211.265463
+Confirming the results by evaluating the network:
+Network Eval. results: 224.744998, 211.265463
+------------------------------------------------------
+Maximizing output:
+Maximum output =  4.035793970310436
+Gluc.(t - 30): 83.530290 , 83.530290 (Same)
+Gluc.(t - 25): 70.000000 , 70.000000 (Same)
+Gluc.(t - 20): 86.519211 , 86.519211 (Same)
+Gluc.(t - 15): 111.519211 , 111.519211 (Same)
+Gluc.(t - 10): 86.519211 , 86.519211 (Same)
+Gluc.(t - 5): 70.000000 , 70.000000 (Same)
+Gluc.(t - 0): 79.669868 , 79.669868 (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 1.000000 , 1.100000  <~~~ (Different)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 122.483837, 126.519631
+Confirming the results by evaluating the network:
+Network Eval. results: 122.483837, 126.519631
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 6 @ time t - 5 
+Minimizing output:
+Minimum output =  -15.71695323834166
+Gluc.(t - 30): 98.050107 , 98.050107  (Same)
+Gluc.(t - 25): 73.050107 , 73.050107  (Same)
+Gluc.(t - 20): 80.433390 , 80.433390  (Same)
+Gluc.(t - 15): 105.433390 , 105.433390  (Same)
+Gluc.(t - 10): 130.433390 , 130.433390  (Same)
+Gluc.(t - 5): 155.433390 , 155.433390  (Same)
+Gluc.(t - 0): 157.226411 , 157.226411  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.000000 , 0.000000  (Same)
+Ins(t - 20): 0.000000 , 0.000000  (Same)
+Ins(t - 15): 0.000000 , 0.000000  (Same)
+Ins(t - 10): 0.000000 , 0.000000  (Same)
+Ins(t - 5): 0.000000 , 0.100000  <~~~ (Different)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 230.603354, 214.886401
+Confirming the results by evaluating the network:
+Network Eval. results: 230.603354, 214.886401
+------------------------------------------------------
+Maximizing output:
+Maximum output =  5.4806073495365695
+Gluc.(t - 30): 93.950338 , 93.950338 (Same)
+Gluc.(t - 25): 70.000000 , 70.000000 (Same)
+Gluc.(t - 20): 95.000000 , 95.000000 (Same)
+Gluc.(t - 15): 103.999683 , 103.999683 (Same)
+Gluc.(t - 10): 78.999683 , 78.999683 (Same)
+Gluc.(t - 5): 87.884223 , 87.884223 (Same)
+Gluc.(t - 0): 70.000000 , 70.000000 (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 1.000000 , 1.100000  <~~~ (Different)
+Ins(t - 0): 0.100000 , 0.100000  (Same)
+Predicted Gluc. Values: 116.683551, 122.164158
+Confirming the results by evaluating the network:
+Network Eval. results: 116.683551, 122.164158
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Testing insulin input # 7 @ time t - 0 
+Minimizing output:
+Minimum output =  -20.74191418346939
+Gluc.(t - 30): 109.434108 , 109.434108  (Same)
+Gluc.(t - 25): 84.434108 , 84.434108  (Same)
+Gluc.(t - 20): 99.931941 , 99.931941  (Same)
+Gluc.(t - 15): 124.931941 , 124.931941  (Same)
+Gluc.(t - 10): 149.931941 , 149.931941  (Same)
+Gluc.(t - 5): 174.931941 , 174.931941  (Same)
+Gluc.(t - 0): 172.719768 , 172.719768  (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.000000 , 0.000000  (Same)
+Ins(t - 20): 0.000000 , 0.000000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.000000 , 0.000000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 1.000000 , 1.100000  <~~~ (Different)
+Predicted Gluc. Values: 241.421478, 220.679563
+Confirming the results by evaluating the network:
+Network Eval. results: 241.421478, 220.679563
+------------------------------------------------------
+Maximizing output:
+Maximum output =  7.743587683664231
+Gluc.(t - 30): 70.000000 , 70.000000 (Same)
+Gluc.(t - 25): 70.000000 , 70.000000 (Same)
+Gluc.(t - 20): 70.000000 , 70.000000 (Same)
+Gluc.(t - 15): 95.000000 , 95.000000 (Same)
+Gluc.(t - 10): 87.730714 , 87.730714 (Same)
+Gluc.(t - 5): 112.730714 , 112.730714 (Same)
+Gluc.(t - 0): 94.568672 , 94.568672 (Same)
+Ins(t - 30): 0.000000 , 0.000000  (Same)
+Ins(t - 25): 0.100000 , 0.100000  (Same)
+Ins(t - 20): 0.100000 , 0.100000  (Same)
+Ins(t - 15): 0.100000 , 0.100000  (Same)
+Ins(t - 10): 0.100000 , 0.100000  (Same)
+Ins(t - 5): 0.100000 , 0.100000  (Same)
+Ins(t - 0): 0.154077 , 0.254077  <~~~ (Different)
+Predicted Gluc. Values: 83.307748, 91.051336
+Confirming the results by evaluating the network:
+Network Eval. results: 83.307748, 91.051336
