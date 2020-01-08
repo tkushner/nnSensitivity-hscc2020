@@ -128,7 +128,7 @@ Text files presenting tests for each insulin input location showing the glucose 
 
 If the conformance property is violated, we find the "Maximum output" to be a positive value. Else, we find a zero value.
 
-Results are presented for the three networks as 
+1. Results are presented for the three networks as 
     - M1_Regular.output.txt
     - M2_SplitLayer.output.txt
     - M3_WeightCons.output.txt
