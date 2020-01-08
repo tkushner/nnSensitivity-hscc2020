@@ -98,8 +98,8 @@ to compile and run all the files.
 
 ## RUNNING
 
-See COMPILATION instructions above.
-
+See COMPILATION instructions above.  This will take about 2-3 minutes
+to complete and generate the plots in PDF files as described below.
 
 ## EXPECTED OUTPUT
 
