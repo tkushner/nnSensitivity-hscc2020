@@ -13,22 +13,22 @@ Dynamics" conditionally accepted to HSCC 2020.
 
 Inside this package the following are included:
 
-CODE:
 
-a) The sherlock tool for verifying the neural network is included in this package under directory src.
+CODE:
+a) The sherlock tool for verifying the neural network is included in this package under directory `DataBased/src`.
    See here: https://github.com/souradeep-111/sherlock
 
 b) A python script that setsup an encoding of two networks in parallel
-to perform monotonicity checking.
+to perform monotonicity checking, under directory `MaxDifferenceOptimization`
 
 c) Glue code in python3 to generate the plots included in the
-paper. Note that the actual plots in the paper use matlab. For
+paper. Note that the actual plots in the paper use Matlab. For
 convenience, this repeatability package uses python3 using the
 matplotlib library.
 
 NEURAL NETWORKS:
 
-Three neural networks are included in the directory BGNetworks.
+Three neural networks are included in the directory `BGNetworks`.
 
 These networks all have $7$ glucose inputs G(t), G(t-5),
 ... , G(t-30) and $7$ insulin inputs u(t), .., u(t-30). They have a
@@ -50,7 +50,7 @@ to the insulin inputs.  This network is in the file  M3_WeightCons_APNN.nt
 
 DATA:
 
-We have included some typical BG trends that are observed in patients in the directory glucoseICs
+We have included some typical BG trends that are observed in patients in the directory `DataBased/glucoseICs`
 Note that we do not have the permission to include the actual anonymized patient data that was used
 in our study reported in the paper. We have a representative set that provides the same behavior that we observed.
 
@@ -70,10 +70,12 @@ for academic purposes and can be downloaded from here :
 http://www.gurobi.com/resources/getting-started/mip-basics
 
 
+# INSTRUCTIONS FOR DATA-BASED ALGORITHM
 ## COMPILATION
 
+a) Navigate into the `DataBased` folder
 
-a) Modify the file Makefile.locale to set the flags HOST_ARCH and GUROBI_PATH
+b) Modify the file Makefile.locale to set the flags HOST_ARCH and GUROBI_PATH
 
 Note that on our machine ( 64 bit Mac OSX with Gurobi 8.1) we have the setting.
 
@@ -89,7 +91,7 @@ and libraries under
 > $(GUROBI_PATH)/$(HOST_ARCH)/include
 
 
-b)  To run everything
+c)  To run everything
 
 > python3 make_file.py
 
@@ -112,5 +114,23 @@ to complete and generate the plots in PDF files as described below.
     - M1-Regular_sensitivity.pdf
     - M2-Split_sensitivity.pdf
     - M3-Constrained_sensitivity.pdf
+
+
+# INSTRUCTIONS FOR ALGORITHM PERFORMING MONOTONICITY CHECKING WITH TWO PARALLEL NETWORKS
+## COMPILATION
+a) Navigate into the `MaxDifferenceOptimization` folder
+
+b) To run everything: 
+> python3 make_file.py
+
+## EXPECTED OUTPUT
+Text files presenting tests for each insulin input location showing the glucose & input traces identified to result in maximum & minimum differences in predicted blood glucose values between two parallel networks. 
+
+If the conformance property is violated, we find the "Maximum output" to be a positive value. Else, we find a zero value.
+
+Results are presented for the three networks as 
+    - M1_Regular.output.txt
+    - M2_SplitLayer.output.txt
+    - M3_WeightCons.output.txt
 
 
