@@ -30,20 +30,20 @@ NEURAL NETWORKS:
 
 Three neural networks are included in the directory BGNetworks.
 
-These networks all have $5$ glucose inputs G(t), G(t-5),
-... , G(t-25) and $5$ insulin inputs u(t), .., u(t-25). They have a
+These networks all have $7$ glucose inputs G(t), G(t-5),
+... , G(t-30) and $7$ insulin inputs u(t), .., u(t-30). They have a
 single output that represents a blood glucose level prediction
-G(t+30). Three different networks are provided.
+G(t+60). Three different networks are provided.
 
 The networks use the Sherlock format documented here: https://github.com/souradeep-111/sherlock
 
 
-a) M1: A network with two dense layers. This network is in the file Regular_APNN.nt	
+a) M1: A network with two dense layers. This network is in the file M1_Regular_APNN.nt	
 
-b) M2: A network with two dense layers with the first layer separated for insulin and glucose inputs. This network is in the file SplitLayer_APNN.nt
+b) M2: A network with two dense layers with the first layer separated for insulin and glucose inputs. This network is in the file M2_SplitLayer_APNN.nt
 
 c) M3: A network with same topology as M2 but has been designed so that the output is guaranteed to be "monotonic" w.r.t
-to the insulin inputs.  This network is in the file  WeightCons_APNN.nt
+to the insulin inputs.  This network is in the file  M3_WeightCons_APNN.nt
 
 
 
@@ -62,7 +62,7 @@ required agreements.
 
 REQUIREMENTS:
 
-- Basic: python3 with numpy, pandas, csv and matplotlib package installed.
+- Basic: python3 with numpy, pandas, csv, os and matplotlib package installed.
 
 - GUROBI library (preferably latest version installed).
 The only library that is needed is the MILP solver Gurobi. It's free
@@ -103,10 +103,14 @@ to complete and generate the plots in PDF files as described below.
 
 ## EXPECTED OUTPUT
 
-M1-Regular_4_ranges_by_location.pdf - This file ... 
-M1-Regular_sensitivity.pdf
-M2-Split_4_ranges_by_location.pdf
-M2-Split_sensitivity.pdf
-M3-Constrained_4_ranges_by_location.pdf
-M3-Constrained_sensitivity.pdf
+1. Min & Max values of reachable sets of blood glucose values as insulin dose increases by 1Unit across each input location. Akin to figures 3 & 7 in the paper. These are generated for each network & named as follows.
+    - M1-Regular_4_ranges_by_location.pdf 
+    - M2-Split_4_ranges_by_location.pdf
+    - M3-Constrained_4_ranges_by_location.pdf
+    
+2. Network sensitivity plots, computed by input location. These are shown for insulin inputs of 0-11 Units akin to figures 4, 10 and 12 in the paper. 
+    - M1-Regular_sensitivity.pdf
+    - M2-Split_sensitivity.pdf
+    - M3-Constrained_sensitivity.pdf
+
 
