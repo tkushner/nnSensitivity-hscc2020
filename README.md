@@ -112,7 +112,7 @@ and libraries under
 > $(GUROBI_PATH)/$(HOST_ARCH)/include
 
 If you have a different version of Gurobi (8.0, 9.0, etc), please change the version in the `LIBS` line in the Makefile (`-lgurobi81`, `-lgurobi90`, etc):
->  `LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w`
+>  LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w
 
 c)  To run everything
 
