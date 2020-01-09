@@ -65,7 +65,7 @@ will have to contact the provider of the data themselves and sign the
 required agreements.
 
 
-REQUIREMENTS:
+## REQUIREMENTS:
 
 1. Basic: python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see below) packages installed.
 
@@ -81,6 +81,7 @@ http://www.gurobi.com/resources/getting-started/mip-basics
     - Navigate to your Gurobi`<installdir>` (the directory that contains the file `setup.py`), and issue the following command:
     - `python setup.py install`
 
+### POTENTIAL TROUBLESHOOTING
 If you have a differing version of Gurobi installed and have trouble linking libraries, please check the following:
 - If you are having trouble with library linking, please add the following lines (with proper gurobi version & paths `gurobi810`, `gurobi811`, etc for `<your-gurobi-folder>`) to your `.bashrc` file:
     - `export GUROBI_HOME="/Library/<your-gurobi-folder>/mac64"`
