@@ -67,7 +67,7 @@ required agreements.
 
 REQUIREMENTS:
 
-1. Basic: python3 with numpy, pandas, csv, os and matplotlib package installed.
+1. Basic: python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see below) packages installed.
 
 2. GUROBI library (please install version 8.1.1).
 The only library that is needed is the MILP solver Gurobi. It's free
@@ -77,12 +77,19 @@ http://www.gurobi.com/resources/getting-started/mip-basics
 - Please ensure you run the following command to install the Gurobi license:
     - `grbgetkey <license-number>`
 
-- If you are having trouble with library linking, please add the following lines to your `.bashrc` file:
-    - `export GUROBI_HOME="/Library/gurobi810/mac64"`
+- Please install `gurobipy` with the following:
+    - Navigate to your Gurobi`<installdir>` (the directory that contains the file `setup.py`), and issue the following command:
+    - `python setup.py install`
+
+If you have a differing version of Gurobi installed and have trouble linking libraries, please check the following:
+- If you are having trouble with library linking, please add the following lines (with proper gurobi version & paths `gurobi810`, `gurobi811`, etc for `<your-gurobi-folder>`) to your `.bashrc` file:
+    - `export GUROBI_HOME="/Library/<your-gurobi-folder>/mac64"`
     - `export PATH="${PATH}:${GUROBI_HOME}/bin"`
     - `export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"`
-    - `export DYLD_LIBRARY_PATH=/Library/gurobi810/mac64/lib/`
+    - `export DYLD_LIBRARY_PATH=/Library/<your-gurobi-folder>/mac64/lib/`
 
+- Additionally, if you have a different version of Gurobi, please ensure the `Makefile` has the proper version (eg: `-lgurobi81` , `-lgurobi90`, etc) in the library line:
+    - `LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w`
 
 
 
