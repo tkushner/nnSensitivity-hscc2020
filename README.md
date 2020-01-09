@@ -67,7 +67,7 @@ required agreements.
 
 ## REQUIREMENTS:
 
-1. Basic: python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see below) packages installed.
+1. Python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see below) packages installed.
 
 2. GUROBI library (please install version 8.1.1).
 The only library that is needed is the MILP solver Gurobi. It's free
