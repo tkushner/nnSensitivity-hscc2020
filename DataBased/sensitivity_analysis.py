@@ -86,6 +86,7 @@ def PlotRanges(df_lst, netname, IDX):
         ax_num = fig.add_subplot(240+idx+1)
         df_sub.plot(ax=ax_num,marker='o')
         ax_num.set_xlim([0,10])
+        plt.gca().legend_.remove()
 
     plt.savefig(netname+'_'+str(IDX)+'_ranges_by_location.pdf')
 

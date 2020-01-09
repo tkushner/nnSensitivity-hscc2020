@@ -11,15 +11,20 @@ This contains the "reproducibility" package for the paper titled
 "Conformance Verification for Neural Network Models of Glucose-Insulin
 Dynamics" conditionally accepted to HSCC 2020.
 
-Inside this package the following are included:
+Reviewer Note: the paper was accepted conditionally on better formalization of the algorithms
+presented in this paper. As part of it, we have split our contribution into two algorithms: "data-based"
+verification that uses glucose profiles from patients as historical glucose values and "formal monotonicity checking"
+that uses two parallel copies of the network to encode monotonicity checking into MILP.
 
+
+Inside this package the following are included:
 
 CODE:
 a) The sherlock tool for verifying the neural network is included in this package under directory `DataBased/src`.
    See here: https://github.com/souradeep-111/sherlock
 
-b) A python script that setsup an encoding of two networks in parallel
-to perform monotonicity checking, under directory `MaxDifferenceOptimization`
+b) A python script that setsup an encoding of two networks in parallel to perform monotonicity checking of neural networks,
+under directory `MaxDifferenceOptimization`
 
 c) Glue code in python3 to generate the plots included in the
 paper. Note that the actual plots in the paper use Matlab. For
@@ -70,8 +75,12 @@ for academic purposes and can be downloaded from here :
 http://www.gurobi.com/resources/getting-started/mip-basics
 
 
-# INSTRUCTIONS FOR DATA-BASED ALGORITHM
+
+
+
 ## COMPILATION
+
+### Running data based algorithm
 
 a) Navigate into the `DataBased` folder
 
@@ -97,13 +106,15 @@ c)  To run everything
 
 to compile and run all the files.
 
+### Running monotonicity verification algorithm
 
-## RUNNING
+a) Navigate into the `MaxDifferenceOptimization` folder
 
-See COMPILATION instructions above.  This will take about 2-3 minutes
-to complete and generate the plots in PDF files as described below.
+b) To run everything: 
+> python3 make_file.py
 
-## EXPECTED OUTPUT
+
+## EXPECTED OUTPUT ( DATA BASED ALG.)
 
 1. Min & Max values of reachable sets of blood glucose values as insulin dose increases by 1Unit across each input location. Akin to figures 3 & 7 in the paper. These are generated for each network & named as follows.
     - M1-Regular_4_ranges_by_location.pdf 
@@ -115,15 +126,8 @@ to complete and generate the plots in PDF files as described below.
     - M2-Split_sensitivity.pdf
     - M3-Constrained_sensitivity.pdf
 
+## EXPECTED OUTPUT (MONOTONICITY VERIFICATION)
 
-# INSTRUCTIONS FOR ALGORITHM PERFORMING MONOTONICITY CHECKING WITH TWO PARALLEL NETWORKS
-## COMPILATION
-a) Navigate into the `MaxDifferenceOptimization` folder
-
-b) To run everything: 
-> python3 make_file.py
-
-## EXPECTED OUTPUT
 Text files presenting tests for each insulin input location showing the glucose & input traces identified to result in maximum & minimum differences in predicted blood glucose values between two parallel networks. 
 
 If the conformance property is violated, we find the "Maximum output" to be a positive value. Else, we find a zero value.
@@ -132,5 +136,9 @@ If the conformance property is violated, we find the "Maximum output" to be a po
     - M1_Regular.output.txt
     - M2_SplitLayer.output.txt
     - M3_WeightCons.output.txt
+
+
+
+
 
 
