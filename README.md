@@ -89,11 +89,6 @@ If you have a differing version of Gurobi installed and have trouble linking lib
     - `export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"`
     - `export DYLD_LIBRARY_PATH=/Library/<your-gurobi-folder>/mac64/lib/`
 
-- Additionally, if you have a different version of Gurobi, please ensure the `Makefile` has the proper version (eg: `-lgurobi81` , `-lgurobi90`, etc) in the library line:
-    - `LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w`
-
-
-
 
 ## COMPILATION
 
@@ -116,6 +111,8 @@ and libraries under
 
 > $(GUROBI_PATH)/$(HOST_ARCH)/include
 
+If you have a different version of Gurobi (8.0, 9.0, etc), please change the version in the `LIBS` line in the Makefile (`-lgurobi81`, `-lgurobi90`, etc):
+>  `LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w`
 
 c)  To run everything
 
