@@ -25,6 +25,10 @@ for r, d, f in os.walk(path):
             else:
                 print('improper file name found: '+str(os.path.join(r,file)))
 
+reg_files.sort()
+split_files.sort()
+cons_files.sort()
+
 reg_data = []
 reg_sens_low = []
 reg_sens_high = []
@@ -70,31 +74,37 @@ cons_low_big = pd.concat(cons_sens_low,axis=1)
 cons_high_big = pd.concat(cons_sens_high,axis=1)
 cons_frame = pd.concat([cons_low_big,cons_high_big],axis=1)
 
-def PlotRanges(df_lst, netname, IDX):
+def PlotRanges(df_lst, netname, IDX,range_max):
     #get and plot the means for a specific index location
     df = df_lst[IDX]
-    df_l = df.iloc[:,0:20:2]
-    df_h = df.iloc[:,1:20:2]
+    MAX=range_max*2
+    df_l = df.iloc[:,0:MAX:2]
+    df_h = df.iloc[:,1:MAX:2]
 
     fig = plt.figure(dpi=300)
     #subplot each input location
     for idx in df_l.index:
         lows = df_l.iloc[idx,:].reset_index(drop=True)
         highs = df_h.iloc[idx,:].reset_index(drop=True)
+        lows.index += 1
+        highs.index += 1
         df_sub = pd.concat([lows,highs],axis=1)
         df_sub.columns = ['low','high']
         ax_num = fig.add_subplot(240+idx+1)
         df_sub.plot(ax=ax_num,marker='o')
-        ax_num.set_xlim([0,10])
+        ax_num.set_xlim([0,range_max])
         plt.gca().legend_.remove()
 
-    plt.savefig(netname+'_'+str(IDX)+'_ranges_by_location.pdf')
+    plt.savefig(netname+'_ranges_by_location_0-'+str(range_max)+'.pdf')
 
 
-def PlotSensitivity(df, netname, printVal):
+def PlotSensitivity(df, netname, printVal,range_max):
     #split positive and negative sensitivities
+    MAX=range_max*2
     df_pos = df[df>0]
+    df_pos=df_pos.iloc[:,df_pos.columns<=MAX] #pull insulin ranges desired
     df_neg = df[df<=0]
+    df_neg=df_neg.iloc[:,df_neg.columns<=MAX]
 
     # print the values, if desired (printVal = True)
     if printVal:
@@ -114,19 +124,28 @@ def PlotSensitivity(df, netname, printVal):
     df_mean.plot(kind='bar',stacked=True)
     plt.ylabel('mean change (mg/dL)/unit')
     plt.xlabel('look back time')
-    plt.title(netname+' network sensitivity')
+    plt.title(netname+' network sensitivity 0-'+str(range_max))
     t_names = ['-30','-25','-20','-15','-10','-5','0']
     locs, labels = plt.xticks()
     plt.xticks(locs,t_names,rotation='horizontal')
     plt.gca().legend_.remove()
-    plt.savefig(netname+'_sensitivity.pdf')
+    plt.savefig(netname+'_sensitivity_0-'+str(range_max)+'.pdf')
 
 #create pdf plots for the three networks
-PlotSensitivity(reg_frame,'M1-Regular',False)
-PlotSensitivity(split_frame,'M2-Split',False)
-PlotSensitivity(cons_frame,'M3-Constrained',False)
+PlotSensitivity(reg_frame,'M1-Regular',False,10)
+PlotSensitivity(split_frame,'M2-Split',False,10)
+PlotSensitivity(cons_frame,'M3-Constrained',False,10)
+
+# and for insulin ranges 0-5 only
+PlotSensitivity(reg_frame,'M1-Regular',False,5)
+PlotSensitivity(split_frame,'M2-Split',False,5)
+PlotSensitivity(cons_frame,'M3-Constrained',False,5)
 
 #create a pdf plot for the random selected ranges by location plots
-PlotRanges(reg_data,'M1-Regular',4)
-PlotRanges(split_data,'M2-Split',4)
-PlotRanges(cons_data,'M3-Constrained',4)
+PlotRanges(reg_data,'M1-Regular',0,10)
+PlotRanges(split_data,'M2-Split',0,10)
+PlotRanges(cons_data,'M3-Constrained',0,10)
+
+PlotRanges(reg_data,'M1-Regular',0,5)
+PlotRanges(split_data,'M2-Split',0,5)
+PlotRanges(cons_data,'M3-Constrained',0,5)

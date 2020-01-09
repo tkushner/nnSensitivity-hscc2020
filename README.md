@@ -116,15 +116,21 @@ b) To run everything:
 
 ## EXPECTED OUTPUT ( DATA BASED ALG.)
 
-1. Min & Max values of reachable sets of blood glucose values as insulin dose increases by 1Unit across each input location. Akin to figures 3 & 7 in the paper. These are generated for each network & named as follows.
-    - M1-Regular_4_ranges_by_location.pdf 
-    - M2-Split_4_ranges_by_location.pdf
-    - M3-Constrained_4_ranges_by_location.pdf
+1. Min & Max values of reachable sets of blood glucose values as insulin dose increases by 1Unit across each input location, akin to figures 3&7. These are generated for each network & named as follows, for bolus ranges 0-10 as well as 0-5.
+    - M1-Regular_ranges_by_location_0-10.pdf 
+    - M1-Regular_ranges_by_location_0-5.pdf
+    - M2-Split_ranges_by_location_0-10.pdf
+    - M2-Split_ranges_by_location_0-5.pdf
+    - M3-Constrained_ranges_by_location_0-10.pdf
+    - M3-Constrained_ranges_by_location_0-5.pdf
     
-2. Network sensitivity plots, computed by input location. These are shown for insulin inputs of 0-11 Units akin to figures 4, 10 and 12 in the paper. 
-    - M1-Regular_sensitivity.pdf
-    - M2-Split_sensitivity.pdf
-    - M3-Constrained_sensitivity.pdf
+2. Network sensitivity plots, computed by input location, for all networks. These are shown for insulin inputs of 0-11 Units akin to figures 4, 10 and 12 in the paper, and for 0-5 Units akin to figures 5 & 11.
+    - M1-Regular_sensitivity_0-10.pdf
+    - M1-Regular_sensitivity_0-5.pdf
+    - M2-Split_sensitivity_0-10.pdf
+    - M2-Split_sensitivity_0-5.pdf
+    - M3-Constrained_sensitivity_0-10.pdf
+    - M3-Constrained_sensitivity_0-5.pdf
 
 ## EXPECTED OUTPUT (MONOTONICITY VERIFICATION)
 
