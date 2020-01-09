@@ -67,12 +67,21 @@ required agreements.
 
 REQUIREMENTS:
 
-- Basic: python3 with numpy, pandas, csv, os and matplotlib package installed.
+1. Basic: python3 with numpy, pandas, csv, os and matplotlib package installed.
 
-- GUROBI library (preferably latest version installed).
+2. GUROBI library (please install version 8.1.1).
 The only library that is needed is the MILP solver Gurobi. It's free
 for academic purposes and can be downloaded from here :
 http://www.gurobi.com/resources/getting-started/mip-basics
+
+- Please ensure you run the following command to install the Gurobi license:
+    - `grbgetkey <license-number>`
+
+- If you are having trouble with library linking, please add the following lines to your `.bashrc` file:
+    - export GUROBI_HOME="/Library/gurobi810/mac64"
+    - export PATH="${PATH}:${GUROBI_HOME}/bin"
+    - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
+    - export DYLD_LIBRARY_PATH=/Library/gurobi810/mac64/lib/
 
 
 
