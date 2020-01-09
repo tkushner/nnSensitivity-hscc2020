@@ -78,10 +78,10 @@ http://www.gurobi.com/resources/getting-started/mip-basics
     - `grbgetkey <license-number>`
 
 - If you are having trouble with library linking, please add the following lines to your `.bashrc` file:
-    - export GUROBI_HOME="/Library/gurobi810/mac64"
-    - export PATH="${PATH}:${GUROBI_HOME}/bin"
-    - export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"
-    - export DYLD_LIBRARY_PATH=/Library/gurobi810/mac64/lib/
+    - `export GUROBI_HOME="/Library/gurobi810/mac64"`
+    - `export PATH="${PATH}:${GUROBI_HOME}/bin"`
+    - `export LD_LIBRARY_PATH="${LD_LIBRARY_PATH}:${GUROBI_HOME}/lib"`
+    - `export DYLD_LIBRARY_PATH=/Library/gurobi810/mac64/lib/`
 
 
 
