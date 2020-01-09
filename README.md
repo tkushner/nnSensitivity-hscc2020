@@ -11,20 +11,26 @@ This contains the "reproducibility" package for the paper titled
 "Conformance Verification for Neural Network Models of Glucose-Insulin
 Dynamics" conditionally accepted to HSCC 2020.
 
-Reviewer Note: the paper was accepted conditionally on better formalization of the algorithms
-presented in this paper. As part of it, we have split our contribution into two algorithms: "data-based"
-verification that uses glucose profiles from patients as historical glucose values and "formal monotonicity checking"
-that uses two parallel copies of the network to encode monotonicity checking into MILP.
+Reviewer Note: the paper was accepted conditionally on better
+formalization of the algorithms presented in this paper. As part of
+it, we have split our contribution into two algorithms: "data-based"
+verification that uses glucose profiles from patients as historical
+glucose values and "formal monotonicity checking" that uses two
+parallel copies of the network to encode monotonicity checking into
+MILP.
 
 
 Inside this package the following are included:
 
 CODE:
-a) The sherlock tool for verifying the neural network is included in this package under directory `DataBased/src`.
-   See here: https://github.com/souradeep-111/sherlock
 
-b) A python script that setsup an encoding of two networks in parallel to perform monotonicity checking of neural networks,
-under directory `MaxDifferenceOptimization`
+a) The sherlock tool for verifying the neural network is included in
+   this package under directory `DataBased/src`.  See here:
+   https://github.com/souradeep-111/sherlock
+
+b) A python script that setsup an encoding of two networks in parallel
+to perform monotonicity checking of neural networks, under directory
+`MaxDifferenceOptimization`
 
 c) Glue code in python3 to generate the plots included in the
 paper. Note that the actual plots in the paper use Matlab. For
@@ -55,9 +61,11 @@ to the insulin inputs.  This network is in the file  M3_WeightCons_APNN.nt
 
 DATA:
 
-We have included some typical BG trends that are observed in patients in the directory `DataBased/glucoseICs`
-Note that we do not have the permission to include the actual anonymized patient data that was used
-in our study reported in the paper. We have a representative set that provides the same behavior that we observed.
+We have included some typical BG trends that are observed in patients
+in the directory `DataBased/glucoseICs` Note that we do not have the
+permission to include the actual anonymized patient data that was used
+in our study reported in the paper. We have a representative set that
+provides the same behavior that we observed.
 
 If the reader is interested, we can point to some data sets that can
 be used as representative blood glucose profiles.  However, the user
@@ -67,11 +75,12 @@ required agreements.
 
 ## REQUIREMENTS:
 
-1. Python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see below) packages installed.
+1. Python3 with numpy, pandas, csv, os, matplotlib and gurobipy (see
+below) packages installed.
 
-2. GUROBI library (please install version 8.1.1).
-The only library that is needed is the MILP solver Gurobi. It's free
-for academic purposes and can be downloaded from here :
+2. GUROBI library (please install version 8.1.1).  The only library
+that is needed is the MILP solver Gurobi. It's free for academic
+purposes and can be downloaded from here :
 http://www.gurobi.com/resources/getting-started/mip-basics
 
 - Please ensure you run the following command to install the Gurobi license:
@@ -82,7 +91,10 @@ http://www.gurobi.com/resources/getting-started/mip-basics
     - `python setup.py install`
 
 ### POTENTIAL TROUBLESHOOTING
-If you have a differing version of Gurobi installed and have trouble linking libraries, please check the following:
+
+If you have a differing version of Gurobi installed and have trouble
+linking libraries, please check the following:
+
 - If you are having trouble with library linking, please add the following lines (with proper gurobi version & paths `gurobi810`, `gurobi811`, etc for `<your-gurobi-folder>`) to your `.bashrc` file:
     - `export GUROBI_HOME="/Library/<your-gurobi-folder>/mac64"`
     - `export PATH="${PATH}:${GUROBI_HOME}/bin"`
@@ -112,6 +124,7 @@ and libraries under
 > $(GUROBI_PATH)/$(HOST_ARCH)/include
 
 If you have a different version of Gurobi (8.0, 9.0, etc), please change the version in the `LIBS` line in the Makefile (`-lgurobi81`, `-lgurobi90`, etc):
+
 >  LIBS = -lgurobi_c++ -lgurobi81 -lm -D_GLIBCXX_USE_CXX11_ABI=0 -m64 -w
 
 c)  To run everything
@@ -157,7 +170,8 @@ If the conformance property is violated, we find the "Maximum output" to be a po
     - M2_SplitLayer.output.txt
     - M3_WeightCons.output.txt
 
-
+Note that these results will be plotted and discussed in the revised
+version of the paper.
 
 
 
