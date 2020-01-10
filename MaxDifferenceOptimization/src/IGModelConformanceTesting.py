@@ -3,6 +3,7 @@ from NeuralNetwork import NeuralNetwork, read_network_from_sherlock_file
 from gurobipy import *
 import sys
 from io import TextIOWrapper
+from PlotResults import plotResults
 import os
 
 # IGModelConformanceTesting
@@ -61,6 +62,7 @@ def conformanceTestModels(net: NeuralNetwork, insulinVaryIdx: int, outFile: Text
     print('Minimizing output:', file=outFile)
     grb_model.optimize()
     print('Minimum output = ', grb_model.objVal, file=outFile)
+    minOut = grb_model.objVal
     grb_model.setObjective(out_vars2[0] - out_vars1[0], GRB.MAXIMIZE)
     inputs1 = []
     inputs2 = []
@@ -110,11 +112,14 @@ def conformanceTestModels(net: NeuralNetwork, insulinVaryIdx: int, outFile: Text
     outs1 = net.eval_network(inputs1)
     outs2 = net.eval_network(inputs2)
     print('Network Eval. results: %f, %f' % (outs1[0], outs2[0]), file=outFile)
+    maxOut = grb_model.objVal
+    return (minOut, maxOut)
 
 
 def processIGFile(filestem: str, outfileStem: str):
     net = read_network_from_sherlock_file(filestem+'.nt')
     print('Read Network: %s.nt' % filestem)
+    result={}
     assert (net.get_num_inputs() == 14)
     outFileName = outfileStem+'.output.txt'
     outFile = open(outFileName, 'w')
@@ -123,7 +128,10 @@ def processIGFile(filestem: str, outfileStem: str):
         print('Testing insulin input # %d @ time t - %d ' % (j - 6, 65 - 5 * j), file=outFile)
         print('Testing insulin input # %d @ time t - %d ' % (j - 6, 65 - 5 * j))
         print('Outputs dumped to file: %s' % outFileName)
-        conformanceTestModels(net, j, outFile)
+        (l,u) = conformanceTestModels(net, j, outFile)
+        result[j-7] = (l,u)
+        # print(l,u)
+    plotResults(result, outfileStem)
     outFile.close()
 
 if __name__ == '__main__':

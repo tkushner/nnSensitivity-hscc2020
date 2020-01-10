@@ -29,6 +29,7 @@ def plotResults(resultDict, fStem):
     plt.xticks(indices, labels)
     plt.ylabel('BG Difference Range (mg/dl)')
     plt.savefig(fStem+'.pdf')
+    plt.savefig(fStem+'_plot.png')
     print('Saving plot to %s.pdf'%fStem)
     #plt.show()
     plt.close()

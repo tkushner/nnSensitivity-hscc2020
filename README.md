@@ -170,6 +170,11 @@ If the conformance property is violated, we find the "Maximum output" to be a po
     - M2_SplitLayer.output.txt
     - M3_WeightCons.output.txt
 
+2. PDF files are plotted in the following files:
+    - M1_Regular.PDF
+    - M2_SplitLayer.PDF
+    - M3_WeightCons.PDF
+
 Note that these results will be plotted and discussed in the revised
 version of the paper.
 
