@@ -37,6 +37,6 @@ run_file: main.o $(OBJS)
 	$(CXX) -O3 -c $(CXXFLAGS) -o $@ $< $(LIBS)
 
 clean:
-	rm -f ./src/*.o *.o ./run_file ./lib/* ./include/configuration.h ./include/gurobi_interface.h ./include/network_computation.h ./include/propagate_intervals.h 	
+	rm -f ./src/*.o *.o ./run_file ./lib/* ./include/configuration.h ./include/gurobi_interface.h ./include/network_computation.h ./include/propagate_intervals.h ./src/libsherlock.a	
 
 -include ${DEPENDS}   
