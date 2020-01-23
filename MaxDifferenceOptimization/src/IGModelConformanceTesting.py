@@ -15,9 +15,9 @@ class ConformanceTestParams:
     basalInsulinMin = 0
     basalInsulinMax = 0.1
     bolusInsulinMin = 0
-    bolusInsulinMax = 1.0
-    bgMin = 70
-    bgMax = 300
+    bolusInsulinMax = 5.0
+    bgMin = 40
+    bgMax = 400
     bgFiveMinuteDifference = 25  # Controls how much we BG can change in 5 minutes
     insulinDelta = 0.1 # How much can insulin infusion vary between copies
 
@@ -27,7 +27,7 @@ def conformanceTestModels(net: NeuralNetwork, insulinVaryIdx: int, outFile: Text
     # Run a conformance test with insulin varying at index insulinVaryIdx
     enc = GurobiEncoder()
     grb_model = Model('test0_nn_model%d' % insulinVaryIdx)
-    #grb_model.setParam('OutputFlag', False)
+    grb_model.setParam('OutputFlag', False)
     # Make two parallel encodings of the network
     (inp_vars1, out_vars1, all_vars1) = enc.encode(grb_model, net,
                                                    'c%d_1' % insulinVaryIdx)
@@ -116,24 +116,36 @@ def conformanceTestModels(net: NeuralNetwork, insulinVaryIdx: int, outFile: Text
     return (minOut, maxOut)
 
 
-def processIGFile(filestem: str, outfileStem: str):
+def processIGFile(filestem: str, outfileStem: str, maxBG = 400, minBG = 40, maxInsulin = 5.0, fiveMinuteDifference = 25):
+    ConformanceTestParams.bgMax = maxBG
+    ConformanceTestParams.bgMin = minBG
+    ConformanceTestParams.bolusInsulinMax = maxInsulin
+    ConformanceTestParams.bgFiveMinuteDifference = fiveMinuteDifference
     net = read_network_from_sherlock_file(filestem+'.nt')
     print('Read Network: %s.nt' % filestem)
     result={}
     assert (net.get_num_inputs() == 14)
     outFileName = outfileStem+'.output.txt'
     outFile = open(outFileName, 'w')
+    print ('Conformance Parameters:', file=outFile)
+    print ('Max BG: ', ConformanceTestParams.bgMax, ' Min BG:', ConformanceTestParams.bgMin , file = outFile)
+    print ('Max Bolus: ', ConformanceTestParams.bolusInsulinMax, ' Max Basal', ConformanceTestParams.basalInsulinMax , file = outFile)
+    print ('Five Minute Max BG Diff: ', ConformanceTestParams.bgFiveMinuteDifference, ' Insulin Delta: ', ConformanceTestParams.insulinDelta, file = outFile)
+    
     for j in range(7, 14):
         print('~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~', file=outFile)
         print('Testing insulin input # %d @ time t - %d ' % (j - 6, 65 - 5 * j), file=outFile)
-        print('Testing insulin input # %d @ time t - %d ' % (j - 6, 65 - 5 * j))
-        print('Outputs dumped to file: %s' % outFileName)
+        #print('Testing insulin input # %d @ time t - %d ' % (j - 6, 65 - 5 * j))
+        # 
         (l,u) = conformanceTestModels(net, j, outFile)
         result[j-7] = (l,u)
         # print(l,u)
     plotResults(result, outfileStem)
+    print('Outputs dumped to file: %s' % outFileName)
     outFile.close()
 
+
+    
 if __name__ == '__main__':
     if len(sys.argv) <= 2:
         print('Usage: %s <name of file to test> <output file name>' % sys.argv[0])

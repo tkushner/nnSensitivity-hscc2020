@@ -21,7 +21,7 @@ def plotResults(resultDict, fStem):
             currentAxis.add_patch(Rectangle((j-0.3,l), 0.6,u-l, color='blue'))
     
     plt.xlim(-0.5,6.5)
-    plt.ylim(minL-0.5,maxU +0.5)
+    plt.ylim(-20,26)
     indices = range(7)
     labels = []
     for j in indices:
@@ -29,8 +29,8 @@ def plotResults(resultDict, fStem):
     plt.xticks(indices, labels)
     plt.ylabel('BG Difference Range (mg/dl)')
     plt.savefig(fStem+'.pdf')
-    plt.savefig(fStem+'_plot.png')
-    print('Saving plot to %s.pdf'%fStem)
+    plt.savefig(fStem+'_plot.png',bbox_inches='tight', pad_inches=0)
+    print('Saving plot to %s.pdf and %s_plot.png'% (fStem,fStem))
     #plt.show()
     plt.close()
     
