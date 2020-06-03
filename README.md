@@ -9,15 +9,8 @@ Contact: Taisa.Kushner@colorado.edu
 
 This contains the "reproducibility" package for the paper titled
 "Conformance Verification for Neural Network Models of Glucose-Insulin
-Dynamics" conditionally accepted to HSCC 2020.
+Dynamics": https://dl.acm.org/doi/abs/10.1145/3365365.3382210
 
-Reviewer Note: the paper was accepted conditionally on better
-formalization of the algorithms presented in this paper. As part of
-it, we have split our contribution into two algorithms: "data-based"
-verification that uses glucose profiles from patients as historical
-glucose values and "formal monotonicity checking" that uses two
-parallel copies of the network to encode monotonicity checking into
-MILP.
 
 
 Inside this package the following are included:
